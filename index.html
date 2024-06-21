@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Counter Project</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body>
+    <div class="grid grid-cols-1 space-y-4 justify-center">
+      <h1 class="text-5xl font-semibold">Counter</h1>
+      <p id="paragraph" class="text-6xl font-extrabold">0</p>
+    </div>
+    <div class="flex gap-4 py-4">
+      <button id="btn1" class="rounded-full bg-gray-500 p-2 text-white">
+        Decrease
+      </button>
+      <button id="btn2" class="rounded-full bg-gray-500 p-2 text-white">
+        Reset
+      </button>
+      <button id="btn3" class="rounded-full bg-gray-500 p-2 text-white">
+        Increase
+      </button>
+    </div>
+
+    <script>
+      const paragraphElement = document.getElementById("paragraph");
+      const btn1 = document.getElementById("btn1");
+      const btn2 = document.getElementById("btn2");
+      const btn3 = document.getElementById("btn3");
+
+      btn1.addEventListener("click", () => {
+        paragraphElement.textContent =
+          parseInt(paragraphElement.textContent) - 1;
+        paragraphElement.style.color = "green";
+      });
+      btn2.addEventListener("click", () => {
+        paragraphElement.textContent = 0;
+      });
+      btn3.addEventListener("click", () => {
+        paragraphElement.textContent =
+          parseInt(paragraphElement.textContent) + 1;
+        paragraphElement.style.color = "green";
+      });
+    </script>
+  </body>
+</html>
